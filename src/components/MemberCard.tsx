@@ -1,5 +1,4 @@
-import type { Member } from "../types/member";
-import type { Role } from "../types/member";
+import type { Member, Role } from "../types/member";
 import Avatar from "./Avatar";
 import Badge from "./Badge";
 import "./MemberCard.css";
@@ -11,9 +10,11 @@ type MemberCardProps = {
 const roleLabels: Record<Role, string> = {
   developer: "Développeur",
   designer: "Designer",
+  product: "Product",
+  manager: "Manager",
 };
 
-const statusLables: Record<Member["status"], string> = {
+const statusLabels: Record<Member["status"], string> = {
   available: "Disponible",
   busy: "Occupé",
   absent: "Absent",
@@ -37,7 +38,7 @@ export default function MemberCard({ member }: MemberCardProps) {
         <p>{roleLabels[member.role]}</p>
 
         <Badge
-          label={statusLables[member.status]}
+          label={statusLabels[member.status]}
           variant={statusVariants[member.status]}
         />
       </div>
