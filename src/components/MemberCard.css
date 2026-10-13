@@ -1,0 +1,68 @@
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 5px rgb(15 23 42 / 4%);
+  transition:
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.member-card:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 6px 18px rgb(15 23 42 / 7%);
+}
+
+.member-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.member-card__info h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.member-card__info p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.member-card__info .badge {
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .member-card {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .member-card {
+    transition: none;
+  }
+}
